@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   web:  
     build: .
@@ -6,3 +6,8 @@ services:
       - "5005:5000"
     volumes:
       - .:/app
+
+      #db kur
+      #redis
+      #decorator  
+      

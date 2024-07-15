@@ -1,7 +1,7 @@
 FROM python:3.12
 EXPOSE 5000
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt 
 COPY . .
-CMD ["gunicorn"  , "-b", "0.0.0.0:5000", "app:app"]
+RUN pip install -r requirements.txt 
+CMD ["gunicorn"  , "-b", "0.0.0.0:5000", "app:app","--reload"]
+

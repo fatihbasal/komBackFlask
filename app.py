@@ -19,3 +19,5 @@ api = Api(app)
 
 api.register_blueprint(UserBlueprint)
 api.register_blueprint(ClotheBlueprint)
+
+print(1)

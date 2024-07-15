@@ -7,8 +7,8 @@ from db import clothes
 
 blp = Blueprint("Clothes", __name__, description="Operations on clothes")
 
-
-@blp.route("/clothe/<string:clothe_id>")
+ 
+@blp.route("/clothe/<string:clothe_id>") 
 class Clothe(MethodView):
     @blp.response(200, ClotheSchema)
     def get(self, clothe_id):

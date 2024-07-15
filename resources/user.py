@@ -25,7 +25,7 @@ class User(MethodView):
             
 @blp.route("/user")
 class UserList(MethodView):
-    @blp.response(200, UserSchema(many=True))
+    
     def get(cls):
         return users.values()
 
@@ -41,3 +41,5 @@ class UserList(MethodView):
         users[user_id] = user
 
         return user
+    
+print(1)
