@@ -3,5 +3,7 @@ EXPOSE 5000
 WORKDIR /app
 COPY . .
 RUN pip install -r requirements.txt 
-CMD ["gunicorn"  , "-b", "0.0.0.0:5000", "app:app","--reload"]
 
+ENV DATABASE_URL=postgresql://postgres:12345@db:5432/kombinledb
+
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--reload"]

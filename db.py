@@ -1,2 +1,3 @@
-users = {}
-clothes = {}
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
