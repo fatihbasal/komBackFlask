@@ -25,7 +25,9 @@ class User(MethodView):
 class UserList(MethodView):
     def get(self):
         users = UserModel.query.all()
-        return jsonify(users)
+        users_dict = [user.to_dict() for user in users]
+        return users_dict
+
 
     def post(self):
         user_data = request.json  # Get the JSON data from the request body
@@ -38,4 +40,5 @@ class UserList(MethodView):
         
         db.session.add(new_user)
         db.session.commit()
+        return {"message": "User created successfully"}
         
